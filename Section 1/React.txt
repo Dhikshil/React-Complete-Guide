@@ -1,0 +1,7 @@
+React is a JavaScript library used for building user interfaces.
+React allows us to build seamless and smooth interfaces building up code from JavaScript
+to create a better system which renders changes in such a way that it is smoother without
+having the feel of a heavy code which is slow to run.
+Using just JavaScript is riddled with inefficient code which slows down over big applciations,
+React allows you to reuse code and functions and components which makes the code run better.
+
