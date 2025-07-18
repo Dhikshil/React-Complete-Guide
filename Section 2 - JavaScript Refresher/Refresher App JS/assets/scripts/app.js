@@ -161,3 +161,49 @@ function transformToObjects(numberArray) {
 
 */
 
+/*
+// We can destructure arrays to extract values 
+
+const [firstname, lastname] = ["Max", "Verstappen"]
+
+// firstname and lastname are now constants that map to their respective values
+
+// We can also destructure objects to extract values
+// we can choose our own names for the constants but keep them as they are in the objects
+
+const {name: thisName, age} = {
+    name: "Max",
+    age: 25
+}
+// We can use a colon after to store the value into another constant name of our choice
+
+
+// In the arrays, they are pulled out by position
+// In the objects, tehy are pulled out by value name
+
+// Now we will look at spreading, where we can spread the values given to us
+// so that the valeus stored in a new array will only contain values and not arrays
+const hobbies = ["climbing", "tennis"];
+const newHobbies = ["swimming"];
+
+
+const mergedHobbiesIncorrectly = [hobbies, newHobbies]
+const mergedHobbiesSpreading = [...hobbies, ...newHobbies]
+
+console.log(mergedHobbiesIncorrectly)
+console.log(mergedHobbiesSpreading)
+
+// You can also use spreading to merge or add data to new objects
+const user = {
+    name: "Max",
+    age: 32
+}
+
+const adminUser = {
+    isAdmin: true,
+    ...user
+}
+
+console.log(adminUser)
+
+*/
