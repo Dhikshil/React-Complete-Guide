@@ -210,7 +210,7 @@ console.log(adminUser)
 
 // if statements, for loops and control structures
 
-
+/*
 password = prompt("Your password:")
 if (password = "admin123"){
     console.log("admin123 works")
@@ -225,4 +225,18 @@ const hobbies = ["sports", "cooking"];
 for (const hobby of hobbies) {
     console.log(hobby)
 }
+*/
+
+// we can pass in functions as values to be called inside another function,
+// here we must make sure not to call the function as we pass it in by
+// removing the parenthesis.
+
+function handleTimeout() {
+    console.log("Timed out!");
+}
+
+setTimeout(handleTimeout, 2000);
+setTimeout(() => {
+    console.log("Timed out!");
+}, 4000)
 
