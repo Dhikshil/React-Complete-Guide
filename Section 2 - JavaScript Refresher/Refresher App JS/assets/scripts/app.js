@@ -18,6 +18,8 @@
 // ===  checks for equality with type aswell as value returning bool
 // == this is different as it is more loose 
 
+/*
+
 if (10 === 10) {// condition goes here
     console.log("10 does equal to 10");// What happens if condition is met
 }
@@ -42,6 +44,7 @@ Calculate a new value based on the three input values: a * b / c (if a, b & c ar
 
 Return the calculated result
 */
+/*
 
 function combine(a, b, c) {
     return a * b / c
@@ -75,6 +78,8 @@ const user = {
     }
 };
 
+/*
+
 // Access a property of the object using user.name or user.age
 
 const greeting1 = user.greet()
@@ -90,3 +95,52 @@ class User {
         console.log("Hello! My name is,", this.name);
     }
 }
+
+
+
+const user1 = new User("Maxwell", 35);
+user1.greet();
+
+*/
+
+const hobbies =  ["sports", "cooking", "reading"];
+console.log(hobbies[0]);
+
+// arr.push(val) is used to add a new item to the end of the array
+hobbies.push("working");
+console.log(hobbies)
+
+
+// arr.findIndex takes in a function, we can use the arrow
+// function and here it will loop each item looking for 
+// the item we need and if found will return True 
+// to the findIndex function which will return to us the
+// index of the item.
+// If the item is not found, false is returned and the 
+// find index function does nothing.
+const index = hobbies.findIndex((item) => {
+    return item === "sports";
+})
+
+// shortened code of the function above:
+const index2 = hobbies.findIndex((item) =>  item === "apple")
+
+// Returns -1 if item is not found
+console.log(index2);
+
+// arr.map takes in a function and can use the arrow function
+// to transform every item in the array and change it
+// .map() in react is used to loop through every item and
+// return JSX code which displays the list
+const editedHobbies = hobbies.map((item) => {
+    return item.charAt(0).toUpperCase() + item.slice(1);
+});
+
+console.log(editedHobbies)
+
+// We can also use maps to create objects using the items in the list
+// The parenthesis before the curly brackets signifies to JS that this 
+// will be an object not a function.
+const objectHobbies = hobbies.map((item) => ({text: item}));
+
+console.log(objectHobbies)
