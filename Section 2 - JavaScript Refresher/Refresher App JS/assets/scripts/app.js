@@ -67,7 +67,7 @@ Normal inefficent code
 const maxName = "max"
 const maxAge = 32
 */
-
+/*
 // code using objects:
 // objects also store functions known as methods
 const user = {
@@ -78,7 +78,7 @@ const user = {
     }
 };
 
-/*
+
 
 // Access a property of the object using user.name or user.age
 
@@ -102,7 +102,7 @@ const user1 = new User("Maxwell", 35);
 user1.greet();
 
 */
-
+/*
 const hobbies =  ["sports", "cooking", "reading"];
 console.log(hobbies[0]);
 
@@ -144,3 +144,20 @@ console.log(editedHobbies)
 const objectHobbies = hobbies.map((item) => ({text: item}));
 
 console.log(objectHobbies)
+*/
+
+/*
+Your task is to add the missing logic to a transformToObjects() function that should transform a list of numbers into a list of JavaScript objects.
+
+In the newly returned array, every object must have a val key and the input array's number as a value.
+
+For example, for the provided input [1, 2, 3] the transformToObjects([1, 2, 3]) function should return [{val: 1}, {val: 2}, {val: 3}].
+
+Answer:
+function transformToObjects(numberArray) {
+    const newNumberArray = numberArray.map((number) => ({val: number}))
+    return newNumberArray
+}
+
+*/
+
