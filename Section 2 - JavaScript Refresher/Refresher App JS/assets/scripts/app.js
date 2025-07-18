@@ -207,3 +207,22 @@ const adminUser = {
 console.log(adminUser)
 
 */
+
+// if statements, for loops and control structures
+
+
+password = prompt("Your password:")
+if (password = "admin123"){
+    console.log("admin123 works")
+} else if (password === "hello") {
+    console.log("hello works")
+} else {
+    console.log("nono no work")
+}
+
+const hobbies = ["sports", "cooking"];
+
+for (const hobby of hobbies) {
+    console.log(hobby)
+}
+
