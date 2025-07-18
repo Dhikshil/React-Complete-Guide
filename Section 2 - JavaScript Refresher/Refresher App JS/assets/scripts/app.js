@@ -80,3 +80,13 @@ const user = {
 const greeting1 = user.greet()
 
 // Classes can be used to create blueprints of objects
+class User {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log("Hello! My name is,", this.name);
+    }
+}
