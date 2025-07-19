@@ -1,8 +1,13 @@
 import { CORE_CONCEPTS } from './data.js';
 import { Header } from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept/CoreConcept.jsx';
+import TabButton from './components/TabButton.jsx';
 
 function App() {
+  function handleClick() {
+    
+  }
+
   return (
     <div>
       <Header />
@@ -15,7 +20,16 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[2]} />
             <CoreConcept {...CORE_CONCEPTS[3]} /> 
           </ul>
-
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton onClick = {handleClick}>Component</TabButton>
+            <TabButton onClick = {handleClick}>JSX</TabButton>
+            <TabButton onClick = {handleClick}>Props</TabButton>
+            <TabButton onClick = {handleClick}>State</TabButton>
+          </menu>
+          Dynamic Content
         </section>
       </main>
     </div>
