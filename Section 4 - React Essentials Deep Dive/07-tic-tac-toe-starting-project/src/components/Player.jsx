@@ -1,16 +1,21 @@
 import { useState } from "react"
 
-export default function PLayer({name, symbol}) {
-    const [ isEditing, setIsEditing] = useState(false);
+export default function PLayer({initialName, symbol}) {
+    const [ playerName, setPlayerName ] =useState(initialName);
+    const [ isEditing, setIsEditing ] = useState(false);
     
     function handleEditing() {
         setIsEditing((editing) => !editing);
     }
 
-    let showPlayers = <span className = "player-name">{name}</span>
+    function handleChange(event) {
+        setPlayerName(event.target.value);
+    }
+
+    let showPlayers = <span className = "player-name">{playerName}</span>
 
     if (isEditing) {
-        showPlayers = <input type = "text " required value={name}></input>
+        showPlayers = <input type = "text " required value={playerName} onChange={handleChange}></input>
     }
 
     return (
