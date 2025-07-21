@@ -8,4 +8,4 @@ export default function CoreConcept({image, title, description}) {
       <p>{description}</p>
     </li>
   )
-}
+} 
