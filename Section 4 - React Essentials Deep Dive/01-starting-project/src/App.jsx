@@ -8,12 +8,8 @@ function App() {
     <>
       <Header />
       <main>
-        <section id="core-concepts">
-          <CoreConcepts />
-        </section>
-        <section id="examples">
-          <Examples />
-        </section>
+        <CoreConcepts />
+        <Examples />
       </main>
     </>
   );
