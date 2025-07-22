@@ -3,10 +3,10 @@ import Player from "./components/Player.jsx"
 import GameBoard from "./components/GameBoard.jsx"
 
 function App() {
-  const [ activePlayer, setActivePlayer ] = useState("X")
+  const [ activePlayer, setActivePlayer ] = useState("X");
 
   function handleSelectSquare() {
-    setActivePlayer((currentActivePlayer) => {currentActivePlayer === "X" ? "O" : "X"});
+    setActivePlayer((currentActivePlayer) => currentActivePlayer === "X" ? "O" : "X");
   }
 
   return (<main>
@@ -22,3 +22,4 @@ function App() {
 }
 
 export default App
+ 

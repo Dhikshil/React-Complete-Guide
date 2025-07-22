@@ -21,8 +21,8 @@ export default function PLayer({initialName, symbol, isActive}) {
     return (
         <li className={isActive ? "active" : undefined}>
           <span id="player">
-          {showPlayers}
-          <span className = "player-symbol">{symbol}</span>
+            {showPlayers}
+            <span className = "player-symbol">{symbol}</span>
           </span>
           <button onClick={handleEditing}>{isEditing ? "Save" : "Edit"}</button>
         </li>
