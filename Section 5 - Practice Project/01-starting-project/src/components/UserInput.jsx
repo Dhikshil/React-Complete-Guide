@@ -1,5 +1,3 @@
-
-
 export default function Input({fieldValues, handleChange}) {
 
   return (

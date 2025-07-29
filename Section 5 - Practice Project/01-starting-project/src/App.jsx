@@ -1,5 +1,6 @@
 import Header from "./components/Header"
 import Input from "./components/UserInput";
+import Result from "./components/Result";
 
 import { useState } from "react";
 
@@ -26,8 +27,8 @@ function App() {
     <>
       <Header>Investment Calculator</Header>
       <Input fieldValues={fieldValues} handleChange={handleFieldChange} />
+      <Result fieldValues={fieldValues} />
     </>
-  )
-}
+)};
 
-export default App
+export default App;
