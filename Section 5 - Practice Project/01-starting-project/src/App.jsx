@@ -14,6 +14,8 @@ const INITIAL_FIELD_VALUES = {
 function App() {
   const [fieldValues, setFieldValues]  = useState(INITIAL_FIELD_VALUES);
 
+  const valuesOnly = Object.values(fieldValues);
+
   function handleFieldChange(e, label) {
     let targetValue = Number(e.target.value);
     setFieldValues((prev) => ({
@@ -27,7 +29,7 @@ function App() {
     <>
       <Header>Investment Calculator</Header>
       <Input fieldValues={fieldValues} handleChange={handleFieldChange} />
-      <Result fieldValues={fieldValues} />
+      <Result valuesOnly={valuesOnly} />
     </>
 )};
 
