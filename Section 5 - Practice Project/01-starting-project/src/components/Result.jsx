@@ -1,4 +1,4 @@
-import { calculateInvestmentResults } from "../util/investment"
+import { calculateInvestmentResults, formatter } from "../util/investment"
 
 export default function Result({ valuesOnly }) {
   const [
@@ -16,8 +16,10 @@ export default function Result({ valuesOnly }) {
   };
 
   let totalInterest = 0;
-  function increaseTotalInterest(interest) {
-    totalInterest += totalInterest + interest
+  let totalInvestment = 0;
+  function increaseTotal(interest, annualInvestment) {
+    totalInterest += interest;
+    totalInvestment = totalInvestment + annualInvestment;
   }
 
   return (
@@ -36,13 +38,15 @@ export default function Result({ valuesOnly }) {
           {calculateInvestmentResults(valuesOnlyObject).map(({year, 
           interest, 
           valueEndOfYear, 
-          annualInvestment}) => (
+          annualInvestment,
+          initialInvestment}) => (
             <tr key={year}>
               <td>{year}</td>
-              <td>{valueEndOfYear}</td>
-              <td>{interest}</td>
-              {increaseTotalInterest(interest)}
-              <td>{totalInterest}</td>
+              <td>{formatter.format(valueEndOfYear)}</td>
+              <td>{formatter.format(interest)}</td>
+              {increaseTotal(interest, annualInvestment)}
+              <td>{formatter.format(totalInterest)}</td>
+              <td>{formatter.format(totalInvestment+initialInvestment)}</td>
             </tr>
           ))}
         </tbody>
