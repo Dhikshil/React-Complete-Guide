@@ -1,5 +1,5 @@
-import Input from "./Input"
-import Modal from "./Modal";
+import Input from "./Input.jsx"
+import Modal from "./Modal.jsx";
 
 import { useRef } from "react";
 
@@ -31,8 +31,9 @@ export default function NewProject({ onSave }) {
     return (
     <>
         <Modal ref={modal} buttonCaption="Close">
-            <h2>Invalid input</h2>
-            <p>Incorrect value entered</p>
+            <h2 className='text-xl font-bold text-stone-700 my-4'>Invalid input</h2>
+            <p className='text-stone-500 mb-4'>Incorrect value entered</p>
+            <p className='text-stone-500 mb-4'>Please make sure all feilds are entered and all values entered correctly</p>
         </Modal>
         <div className="w-[35rem] mt-16">
             <menu className="flex items-center justify-end gap-4 my-4">
