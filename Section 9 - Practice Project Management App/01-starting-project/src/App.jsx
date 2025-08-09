@@ -10,7 +10,7 @@ function App() {
     projects: [],
   }); 
 
-  function handlestartAddProject() {
+  function handleStartAddProject() {
     setProjectsState((prevProjectsState) => {
       return {
         ...prevProjectsState,
@@ -34,19 +34,26 @@ function App() {
     });
   };
 
-  console.log(projectsState);
+  function handleCancelProject() {
+    setProjectsState((prevProjectsState) => {
+      return {
+        ...prevProjectsState,
+        selectedProject: undefined,
+      }
+    });
+  }
 
   let content;
 
   if (projectsState.selectedProject === null) {
-    content = <NewProject onSave={handleAddProject} />
+    content = <NewProject onSave={handleAddProject} onCancel={handleCancelProject} />
   } else {
-    content = <NoProjectSelected onStartAddProject={handlestartAddProject} />
-  }
+    content = <NoProjectSelected onStartAddProject={handleStartAddProject} />
+  };
 
   return (
     <main className="h-screen my-8 flex gap-8">
-      <ProjectSidebar onStartAddProject={handlestartAddProject} projects={projectsState.projects} />
+      <ProjectSidebar onStartAddProject={handleStartAddProject} projects={projectsState.projects} />
       {content}
     </main>
   );
