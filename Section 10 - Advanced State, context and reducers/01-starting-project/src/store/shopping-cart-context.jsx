@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useReducer } from "react";
 import { DUMMY_PRODUCTS } from "../dummy-products";
 
 export const CartContext = createContext({
@@ -7,41 +7,53 @@ export const CartContext = createContext({
     updateItemQuantity: () => { },
 });
 
+function shoppingCartReducer(state, action) {
+    if (action.type === 'add-item') {
+        const updatedItems = [...state.items];
+
+        const existingCartItemIndex = updatedItems.findIndex(
+            (cartItem) => cartItem.id === action.playload
+        );
+        const existingCartItem = updatedItems[existingCartItemIndex];
+
+        if (existingCartItem) {
+            const updatedItem = {
+                ...existingCartItem,
+                quantity: existingCartItem.quantity + 1,
+            };
+            updatedItems[existingCartItemIndex] = updatedItem;
+        } else {
+            const product = DUMMY_PRODUCTS.find((product) => product.id === id);
+            updatedItems.push({
+                id: id,
+                name: product.title,
+                price: product.price,
+                quantity: 1,
+            });
+        }
+
+        return {
+            items: updatedItems,
+        };
+    }
+    return state;
+}
 
 export default function CartContextProvider({children}) {
+     
+    const [ shoppingCartState, shoppingCartDispatch ] = useReducer(shoppingCartReducer, {items: []});
+
     const [shoppingCart, setShoppingCart] = useState({
         items: [],
     });
 
     function handleAddItemToCart(id) {
-        setShoppingCart((prevShoppingCart) => {
-            const updatedItems = [...prevShoppingCart.items];
+        shoppingCartDispatch({
+            type: 'add-item',
+            playload: id,
+        })
 
-            const existingCartItemIndex = updatedItems.findIndex(
-                (cartItem) => cartItem.id === id
-            );
-            const existingCartItem = updatedItems[existingCartItemIndex];
 
-            if (existingCartItem) {
-                const updatedItem = {
-                    ...existingCartItem,
-                    quantity: existingCartItem.quantity + 1,
-                };
-                updatedItems[existingCartItemIndex] = updatedItem;
-            } else {
-                const product = DUMMY_PRODUCTS.find((product) => product.id === id);
-                updatedItems.push({
-                    id: id,
-                    name: product.title,
-                    price: product.price,
-                    quantity: 1,
-                });
-            }
-
-            return {
-                items: updatedItems,
-            };
-        });
     }
 
     function handleUpdateCartItemQuantity(productId, amount) {
@@ -70,7 +82,7 @@ export default function CartContextProvider({children}) {
     }
 
     const ctxValue = {
-        items: shoppingCart.items,
+        items: shoppingCartState.items,
         addItemToCart: handleAddItemToCart,
         updateItemQuantity: handleUpdateCartItemQuantity,
     }

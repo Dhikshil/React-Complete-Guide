@@ -4,6 +4,7 @@ import rainJacket from './assets/rain-jacket.jpg';
 import merlotSuit from './assets/merlot-suit.jpg';
 import moonlightDress from './assets/moonlight-dress.jpg';
 import denimPioneer from './assets/denim-pioneer.jpg';
+import frock from './assets/frock.jpg'
 
 export const DUMMY_PRODUCTS = [
   {
@@ -57,11 +58,11 @@ export const DUMMY_PRODUCTS = [
     },
     {
     id: 'p7',
-    image: denimPioneer,
-    title: 'Pioneer Rugged Denim Jacket',
-    price: 79.99,
+    image: frock,
+    title: 'title 1',
+    price: 45.69,
     description:
-    'Our Pioneer Rugged Denim Jacket is a tribute to those who embody the spirit of adventure. Designed with durability and comfort in mind, this jacket is a wardrobe essential for the urban explorer.'
+    'description 1'
     },
     {
     id: 'p8',
