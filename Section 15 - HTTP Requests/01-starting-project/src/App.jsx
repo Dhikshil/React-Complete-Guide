@@ -49,8 +49,17 @@ function App() {
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current.id)
     );
 
+    try {
+      await updateUserPlaces(
+        userPlaces.filter((place) => place.id !== selectedPlace.current.id)
+      );
+    } catch (error) {
+      setUserPlaces(userPlaces);
+      setUpdatingPlacesError({message: error.message || 'Failed to delete place.'})
+    }
+
     setModalIsOpen(false);
-  }, []);
+  }, [userPlaces]);
 
   function handleError() {
     setUpdatingPlacesError(null);
