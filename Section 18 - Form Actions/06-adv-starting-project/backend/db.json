@@ -1,6 +1,13 @@
 {
   "opinions": [
     {
+      "id": 1755184331838,
+      "votes": 0,
+      "userName": "M. Jackson",
+      "title": "React is amazing!!",
+      "body": "I am a music artist, learning react on the side and I found this course absolutely wonderful. I would definitely recommend this to anyone interested in React."
+    },
+    {
       "id": 1,
       "userName": "Maximilian Schwarzmüller",
       "title": "Do yourself a favor and learn React!",
