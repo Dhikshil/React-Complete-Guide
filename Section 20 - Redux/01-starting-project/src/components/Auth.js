@@ -6,8 +6,6 @@ import classes from './Auth.module.css';
 
 const Auth = () => {
   const dispatch = useDispatch();
-  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
-
   function loginHandler(event) {
     event.preventDefault();
     dispatch(authActions.login());
